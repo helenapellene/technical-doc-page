@@ -1,5 +1,6 @@
 :root{
     --primary: rgb(214, 20, 20);
+    --grey: #f5f5f5;
 }
 
 
@@ -116,6 +117,14 @@ font-family: 'Poppins', sans-serif;
     top: 34px;
     opacity: .2;
 
+}
+
+.call-to-action{
+    border-radius: 50px;
+}
+
+.call-to-action img{
+    max-width: 280px;
 }
 
 
