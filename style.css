@@ -102,6 +102,25 @@ font-family: 'Poppins', sans-serif;
     background-color:#ff5722;
 }
 
+.step{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.step::after{
+    content:'';
+    border-right: 1px solid var(--primary);
+    height: 60px;
+    position: absolute;
+    top: 34px;
+    opacity: .2;
+
+}
+
+
+
+
 /* BOTON ABAJO HACIA ARRIBA */
 .scrollup{border-radius: 50%;
 font-size: 20px;color: #fff; background-color: var(--primary);

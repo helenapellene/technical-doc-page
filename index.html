@@ -198,28 +198,62 @@
               <h1 class="display-4 fw-bold text-center">Interrupciones</h1>
               <p class="d-block text-primary mb-3 text-center ">
                 Mecanismo mediante el cual se puede interrumpir el procesamiento normal de la CPU.
- Pueden ser de origen interno o externo a la CPU.
+                Pueden ser de origen interno o externo a la CPU.
                 </p>
                 <div class="col-lg-6">
-                  <h2 class="fw-bold">¿Por qué Interrumpir?</h2>
-                    <ul>
-                      <li> Una interrupcion trasnfiere el control a la rutina de servicio de la misma, generalmente por medio del vector de interrupcion, 
-                        que contiene las direcciones e todas las rutinas de servicio</li>
-                        <li>La arquitectura de la interrupcion debe salvar la direccion de instruccion interrumpida</li>
-                        <li>
-                          Las interrupciones entranstes son deshabilitadas mientras ota interrupcion esta
-                          siendo procesada para prevenir una perdida de interrupcion.
-
-                        </li>
+                  <h2 class="fw-bold mb-5">¿Por qué Interrumpir?</h2>
+                    <ul class="list-unstyled">
+                      <li class="d-flex mb-4"> 
+                        <p class="lead fw-bold step">•</p>
+                        <div class="ms-3">
+                          <p class="lead fw.bold"> Por resultado de una ejecución de una instrucción<span class=text-primary>.</span></p>
+                          <p>Ej: desbordamiento aritmético (“overflow”), división por cero.</p>  
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4"> 
+                        <p class="lead fw-bold step">•</p>
+                        <div class="ms-3">
+                          <p class="lead fw-bold">Por un temporizador interno del procesador.<span class=text-primary>.</span></p>
+                          <p>Permite al S.O. realizar ciertas funciones de manera regular.</p>  
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4"> 
+                        <p class="lead fw-bold step">•</p>
+                        <div class="ms-3">
+                          <p class="lead fw-bold">Por una operación de E/S.<span class=text-primary>.</span></p>
+                          <p>Ej: para indicar la finalización normal de una operación.</p>  
+                        </div>
+                      </li>
+                      <li class="d-flex mb-4"> 
+                        <p class="lead fw-bold step">•</p>
+                        <div class="ms-3">
+                          <p class="lead fw-bold">Por un fallo de hardware.<span class=text-primary>.</span></p>
+                          <p>Ej: error de paridad en la memoria, pérdida de energía.</p>  
+                        </div>
+                      </li>
                     
-                      </ul>>
-                    <h2 class="fw-bold">Funcionamiento de las Interrupciones</h2>
-                    <ul>
-                        <li> Por resultado de una ejecución de una instrucción.</li>
-                        <li>Por un temporizador interno del procesador.</li>
-                        <li>Por una operación de E/S.</li>
-                        <li>Por un fallo de hardward.</li>
                     </ul>
+
+
+
+
+                    <h2 class="fw-bold">Funcionamiento</h2>
+                    <p>Se comprueba si se ha solicitado alguna interrupción, indicada por una señal (flag) de pedido de interrupción.
+                    <ul>
+                    <li class="fw-bold">Si no hay señal se capta la siguiente instrucción.</li>
+                    <li class="fw-bold">Si hay algún pedido de interrupción pendiente:</li>
+                    <ol>
+                    <li>Se suspende la ejecución del programa en curso </li>
+                    <li>Guarda su contexto (próxima instrucción a ejecutar y el estado del 
+                      procesador)</li>
+                    <li>Carga el PC con la dirección de comienzo de una rutina de gestión 
+                      de interrupción. Se inhiben otras interrupciones</li>
+                    </ol>
+                    <li class="fw-bold">Finalizada la rutina de gestión, el procesador retoma la ejecución 
+                      del programa del usuario en el punto de interrupción.</li>
+                  </ul>
+                  </p>
+                    
                 </div>
 
 
@@ -258,7 +292,7 @@
                       <li>Conectar con la CPU y memoria vía bus del sistema.</li>
                       <li>Conectar con los periféricos mediante conexiones de datos particularizadas.</li>
                     </ul>
-                    
+
                         Las funciones o requerimientos principales de los módulos de E/S se agrupan en las 
                         siguientes categorías:
                         <ul>
@@ -304,7 +338,12 @@
                 </div>
             </div>
         </section>
-    
+        <!------------------------------------------------------------------------------->
+
+
+
+
+
         <!------------------------------/* BOTON ABAJO HACIA ARRIBA */------------------------->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -350,9 +389,7 @@
           </script>
           </head>
           <br><br><br><br><br>
-          <div class="row">
-          <div id="section-1" class="text-center"><br>Cómo crear un botón de subir arriba - scroll top scroll bottom</div>
-          </div>
+          
           <br><br><br>
           <div class="scrollup" href="#"><i class="fa fa-angle-double-up" aria-hidden="true"></i></div>
           <script>
